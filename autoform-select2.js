@@ -158,6 +158,13 @@ Template.afSelect2.rendered = function () {
       }
     });
 
+    // set selected value
+    if( values.length == 1 ){
+      if( template.$('select option:selected').val() ){
+        $s.select2('val', template.$('select option:selected').val() );
+      }
+    }
+
     var currentValues = $s.val();
     if ((!currentValues && values.length > 0) ||
         (currentValues && currentValues.toString() !== values.toString())) {
